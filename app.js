@@ -13,7 +13,7 @@ import session from "express-session";
 
 const CONNECTION_STRING =
   process.env.DB_CONNECTION_STRING || "mongodb://127.0.0.1:27017/weather-app";
-mongoose.connect(CONNECTION_STRING);
+mongoose.connect(CONNECTION_STRING, { dbName: "weather-app" });
 
 const app = express();
 app.use(
